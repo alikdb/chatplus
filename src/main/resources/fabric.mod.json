@@ -1,0 +1,54 @@
+{
+	"schemaVersion": 1,
+	"id": "hypixel-chatplus",
+	"version": "${version}",
+	"name": "Hypixel ChatPLUS",
+	"description": "Chat improvements for Hypixel and SkyBlock: one-click channel buttons, player heads in every chat (guild, party, co-op, DMs), a bigger chat history and a League-style chat peek key.",
+	"authors": [
+		"alikdb"
+	],
+	"contributors": [
+		"Chat head rendering is based on Chat Heads by dzwdz and Fourmisain (MPL-2.0)"
+	],
+	"contact": {
+		"homepage": "https://github.com/alikdb/chatplus",
+		"sources": "https://github.com/alikdb/chatplus",
+		"issues": "https://github.com/alikdb/chatplus/issues"
+	},
+	"license": "MPL-2.0",
+	"icon": "assets/hypixel-chatplus/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			{
+				"value": "com.alikdb.chatplus.client.HypixelChatPLUSClient",
+				"adapter": "kotlin"
+			}
+		],
+		"modmenu": [
+			{
+				"value": "com.alikdb.chatplus.client.config.ModMenuIntegration",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		{
+			"config": "hypixel-chatplus.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	},
+	"suggests": {
+		"modmenu": "*"
+	},
+	"conflicts": {
+		"chat_heads": "*"
+	}
+}

@@ -1,0 +1,28 @@
+{
+	"required": true,
+	"package": "com.alikdb.chatplus.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"ChatComponentHeadsMixin",
+		"ChatComponentLineConsumerMixin",
+		"ChatComponentMixin",
+		"ChatListenerMixin",
+		"ChatScreenMixin",
+		"ClientPacketListenerMixin",
+		"CommandSuggestionsListMixin",
+		"GuiRendererMixin",
+		"HudMixin",
+		"MouseHandlerMixin",
+		"PlainTextRenderableMixin",
+		"PlayerChatMessageMixin",
+		"PlayerGlyphInstanceMixin",
+		"PlayerGlyphProviderMixin",
+		"PlayerSpriteMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
