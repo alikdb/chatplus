@@ -166,16 +166,44 @@ Sonra **Submit for review**. Modrinth ekibi yeni projeleri elle onaylar, bu gene
 
 ## 5. Sonraki sürümler
 
-1. `gradle.properties` içinde `version=` değerini artır (`1.0.1`, `1.1.0`...).
-2. [`CHANGELOG.md`](../CHANGELOG.md) dosyasının en üstüne `## 1.0.1` başlığıyla yeni sürümün maddelerini ekle.
+Yayın tamamen otomatik: GitHub sürümü ve Modrinth yüklemesi tek bir etiketle olur.
+
+1. `gradle.properties` içinde `version=` değerini artır (`1.0.2`, `1.1.0`...).
+2. [`CHANGELOG.md`](../CHANGELOG.md) dosyasının en üstüne `## 1.0.2` başlığıyla sürüm notlarını yaz.
+   Bu metin hem GitHub'da hem Modrinth'te changelog olarak görünür. `### Added`, `### Changed`, `### Fixed`
+   alt başlıkları ve her madde tek satır olursa iki yerde de düzgün görünür.
 3. Commit'le ve gönder, sonra sürüm etiketini gönder:
    ```sh
-   git tag v1.0.1
-   git push origin v1.0.1
+   git tag v1.0.2
+   git push origin v1.0.2
    ```
-4. GitHub Actions birkaç dakikada her Minecraft sürümü için jar derler ve **Releases** altında `v1.0.1` sürümünü
-   açar, notları CHANGELOG'dan alır. Etiket `gradle.properties`'teki sürümle uyuşmazsa durur.
-5. Jar'ları Releases'tan indirip Modrinth'e yükle (her Minecraft sürümü ayrı version, bkz. 4. adım).
+4. GitHub Actions birkaç dakikada:
+   - her Minecraft sürümü (`versions/`) için jar derler,
+   - **Releases** altında `v1.0.2` sürümünü açar,
+   - her jar'ı Modrinth'e ayrı version olarak yükler: `1.0.2+26.2`, `1.0.2+26.3`... Oyun sürümü, Fabric,
+     bağımlılıklar (Fabric API, Fabric Language Kotlin zorunlu; Mod Menu isteğe bağlı; Chat Heads uyumsuz)
+     ve changelog otomatik doldurulur.
+
+   Etiket `gradle.properties`'teki sürümle uyuşmazsa hiçbir şey yayınlanmaz.
+
+### Modrinth token'ı
+
+Yükleme için Modrinth token'ı GitHub'da **Settings → Secrets and variables → Actions** altında
+`MODRINTH_TOKEN` adıyla saklanıyor. Repoda hiçbir dosyada yazmıyor, loglarda da gizleniyor.
+
+Token'ı yenilersen (Modrinth → Settings → Personal access tokens) yenisini şöyle kaydet:
+
+```sh
+gh secret set MODRINTH_TOKEN --repo alikdb/chatplus
+```
+
+Token'da en az **Create versions** ve **Read projects** yetkileri olmalı.
+
+Bir sürümü elle yüklemen gerekirse (örneğin iş akışı yarıda kaldıysa), jar'ları bir klasöre koyup:
+
+```sh
+MODRINTH_TOKEN=... .github/scripts/publish-modrinth.sh 1.0.2 notlar.md jar-klasörü
+```
 
 ## 6. Yeni Minecraft sürümü desteği
 

@@ -1,5 +1,5 @@
 # Pushing a tag like v1.0.1 builds a jar for every Minecraft version in versions/
-# and publishes them as a GitHub release, with the notes from CHANGELOG.md.
+# and publishes them as a GitHub release and on Modrinth, with the notes from CHANGELOG.md.
 
 name: release
 on:
@@ -45,3 +45,7 @@ jobs:
           awk -v v="$version" '/^## /{ p = ($2 == v); next } p' CHANGELOG.md > notes.md
           jars=$(ls build/libs/*.jar | grep -v -- '-sources.jar')
           gh release create "$GITHUB_REF_NAME" $jars --title "ChatPlus - Hypixel $version" --notes-file notes.md
+      - name: publish to modrinth
+        env:
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+        run: .github/scripts/publish-modrinth.sh "${GITHUB_REF_NAME#v}" notes.md

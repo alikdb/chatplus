@@ -2,8 +2,8 @@
 
 ## 1.0.1
 
-- The selected chat channel is remembered when you switch servers (for example `/hub`), reconnect or restart the
-  game, like Hypixel does. Before, the buttons went back to Normal while Hypixel still sent messages to the old channel.
+### Fixed
+- **Your chat channel is remembered.** Switching servers (for example `/hub` or `/warp`), reconnecting or restarting the game no longer resets the channel buttons to *Normal*. Hypixel keeps your channel in all of these cases, so before this fix the buttons could show *Normal* while your messages still went to guild or party chat. The buttons now always show the channel Hypixel really uses.
 
 ## 1.0.0
 
