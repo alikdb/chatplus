@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.0.1
 
 - The selected chat channel is remembered when you switch servers (for example `/hub`), reconnect or restart the
   game, like Hypixel does. Before, the buttons went back to Normal while Hypixel still sent messages to the old channel.
