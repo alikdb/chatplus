@@ -2,7 +2,7 @@
 
 ## 1.0.0
 
-First release for Minecraft 26.2 (Fabric).
+First release, for Minecraft 26.2 and 26.3 (Fabric).
 
 - Channel buttons above the chat input: Normal, Party, Guild and Co-op, plus your own command buttons.
   The active channel is highlighted and follows Hypixel's channel messages.

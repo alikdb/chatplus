@@ -12,7 +12,7 @@ import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.screens.ChatScreen
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.FontDescription
-import org.lwjgl.glfw.GLFW
+import com.mojang.blaze3d.platform.InputConstants
 import org.slf4j.LoggerFactory
 
 /**
@@ -70,10 +70,10 @@ object ChatPlusClientGameTest : FabricClientGameTest {
 			context.setScreen { null }
 
 			context.waitTicks(20 * 11) // let the HUD chat fade out
-			context.input.holdKey(GLFW.GLFW_KEY_LEFT_ALT)
+			context.input.holdKey(InputConstants.KEY_LALT)
 			context.waitTicks(3)
 			context.takeScreenshot("chat-peek")
-			context.input.releaseKey(GLFW.GLFW_KEY_LEFT_ALT)
+			context.input.releaseKey(InputConstants.KEY_LALT)
 
 			context.runOnClient<RuntimeException> { minecraft ->
 				ChatPlusConfig.get().chatHeads.position = HeadPosition.BEFORE_LINE

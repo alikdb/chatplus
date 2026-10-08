@@ -15,7 +15,8 @@ Bu sayfada ChatPlus - Hypixel'in bütün ayarları, ne işe yaradıkları ve var
 
 ## Kurulum
 
-Minecraft **26.2** için [Fabric Loader](https://fabricmc.net/use/) kur, sonra `mods` klasörüne şunları koy:
+Minecraft **26.2** veya **26.3** için [Fabric Loader](https://fabricmc.net/use/) kur, sonra `mods` klasörüne şunları koy.
+Modun Minecraft sürümüne uyan dosyasını indir, örneğin 26.3 için `chatplus-hypixel-1.0.0+26.3.jar`.
 
 | Mod | |
 |---|---|

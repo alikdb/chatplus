@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  Fabric · Minecraft 26.2 · client-side · <a href="docs/settings.tr.md">Türkçe rehber</a>
+  Fabric · Minecraft 26.2 and 26.3 · client-side · <a href="docs/settings.tr.md">Türkçe rehber</a>
 </p>
 
 ![Channel buttons and chat heads](docs/images/chat.png)
@@ -67,7 +67,8 @@ All settings are explained in **[docs/settings.md](docs/settings.md)**.
 
 ## Installation
 
-1. Install [Fabric Loader](https://fabricmc.net/use/) for Minecraft **26.2**.
+1. Install [Fabric Loader](https://fabricmc.net/use/) for Minecraft **26.2** or **26.3**.
+   Download the mod file that matches your Minecraft version, for example `chatplus-hypixel-1.0.0+26.3.jar` for 26.3.
 2. Put these in your `mods` folder:
 
 | Mod | |
@@ -97,7 +98,8 @@ no programming needed; see **[docs/translations.md](docs/translations.md)**.
 Requires JDK 25.
 
 ```sh
-./gradlew build              # mod jar in build/libs
+./gradlew build              # mod jar in build/libs, for the version set by mc= in gradle.properties
+./gradlew build -Pmc=26.3    # the same for another Minecraft version (see versions/)
 ./gradlew test               # chat parser tests
 ./gradlew runClient          # development client
 ./gradlew runClientGameTest  # opens a test world, feeds Hypixel chat lines and saves

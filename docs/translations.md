@@ -55,7 +55,7 @@ Click **Details** next to the failed check to see the exact line.
 
 ## Testing in game (optional)
 
-Build the mod with `./gradlew build` (JDK 25 needed) and copy `build/libs/chatplus-hypixel-<version>.jar` into your
+Build the mod with `./gradlew build` (JDK 25 needed) and copy `build/libs/chatplus-hypixel-<version>+<minecraft>.jar` into your
 `mods` folder, or start a test client with `./gradlew runClient`. Choose your language in Options → Language and
 open the settings with `/chatplus`.
 

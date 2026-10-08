@@ -5,17 +5,20 @@ Metinler İngilizce, çünkü Modrinth'teki oyuncuların çoğu İngilizce okuyo
 
 ---
 
-## 1. Jar dosyasını hazırla
+## 1. Jar dosyaları
 
-```sh
-./gradlew build
-```
+Mod her Minecraft sürümü için ayrı jar olarak çıkar, çünkü Minecraft'ın iç yapısı sürümden sürüme değişiyor
+(26.3'te örneğin tuş kodları değişti). Şu an desteklenenler `versions/` klasöründeki dosyalar: **26.2** ve **26.3**.
 
-Yükleyeceğin dosya: `build/libs/chatplus-hypixel-1.0.0.jar`.
-Aynı klasördeki `-sources.jar` dosyasını **yükleme**.
+Jar'ları elle derlemene gerek yok: GitHub'a `v1.0.0` gibi bir sürüm etiketi gönderildiğinde GitHub Actions hepsini
+derleyip repo sayfasının sağındaki **Releases** bölümünde yayınlar (bkz. [5. Sonraki sürümler](#5-sonraki-sürümler)).
+Modrinth'e yükleyeceğin dosyaları oradan indir:
 
-Yüklemeden önce bir kere gerçek Hypixel'de dene: guild/party chatinde kafalar çıkıyor mu, butonlara basınca kanal
-değişiyor mu, Sol Alt çalışıyor mu.
+- `chatplus-hypixel-1.0.0+26.2.jar`
+- `chatplus-hypixel-1.0.0+26.3.jar`
+
+Elle derlemek istersen: `./gradlew build -Pmc=26.2` ve `./gradlew build -Pmc=26.3`, dosyalar `build/libs/` altında.
+`-sources.jar` ile biten dosyaları **yükleme**.
 
 ---
 
@@ -25,7 +28,7 @@ Repo sayfasında sağdaki **About** yanındaki dişli simgesine tıkla.
 
 **Description**
 ```
-Chat mod for Hypixel and SkyBlock: channel buttons, player heads in every chat, longer chat history and a chat peek key. Fabric 26.2.
+Chat mod for Hypixel and SkyBlock: channel buttons, player heads in every chat, longer chat history and a chat peek key. Fabric 26.2 and 26.3.
 ```
 
 **Website** (Modrinth sayfası açılınca)
@@ -121,17 +124,20 @@ Her görsel için başlık ve açıklama:
 
 ## 4. İlk sürümü yükle
 
-Proje sayfasında **Versions → Create a version**.
+Her Minecraft sürümü Modrinth'te **ayrı bir version** olarak yüklenir. Oyuncular kendi sürümlerine uyanı otomatik görür.
+Proje sayfasında **Versions → Create a version**, iki kere:
 
-| Alan | Değer |
-|---|---|
-| File | `chatplus-hypixel-1.0.0.jar` |
-| Version title | `1.0.0` |
-| Version number | `1.0.0` |
-| Release channel | `Release` |
-| Loaders | `Fabric` |
-| Game versions | `26.2` |
-| Environment (sorulursa) | Client-side only |
+| Alan | 26.2 için | 26.3 için |
+|---|---|---|
+| File | `chatplus-hypixel-1.0.0+26.2.jar` | `chatplus-hypixel-1.0.0+26.3.jar` |
+| Version title | `1.0.0 for 26.2` | `1.0.0 for 26.3` |
+| Version number | `1.0.0+26.2` | `1.0.0+26.3` |
+| Release channel | `Release` | `Release` |
+| Loaders | `Fabric` | `Fabric` |
+| Game versions | `26.2` | `26.3` |
+| Environment (sorulursa) | Client-side only | Client-side only |
+
+Bağımlılıklar ve changelog ikisinde de aynı:
 
 **Dependencies** (proje adıyla ara, ilişki türünü seç):
 
@@ -144,7 +150,7 @@ Proje sayfasında **Versions → Create a version**.
 
 **Changelog**
 ```
-First release for Minecraft 26.2 (Fabric).
+First release, for Minecraft 26.2 and 26.3 (Fabric).
 
 - Channel buttons above the chat input: Normal, Party, Guild and Co-op, plus your own command buttons. The active channel is highlighted and follows Hypixel's channel messages.
 - Player heads in guild, party, co-op, private message, Party Finder and SkyBlock chat, also for players who are not in your lobby.
@@ -161,12 +167,31 @@ Sonra **Submit for review**. Modrinth ekibi yeni projeleri elle onaylar, bu gene
 ## 5. Sonraki sürümler
 
 1. `gradle.properties` içinde `version=` değerini artır (`1.0.1`, `1.1.0`...).
-2. [`CHANGELOG.md`](../CHANGELOG.md) dosyasının en üstüne yeni sürümün maddelerini ekle.
-3. `./gradlew build`, sonra yeni jar'ı Modrinth'te **Create a version** ile yükle. Changelog alanına CHANGELOG'daki maddeleri yapıştır.
+2. [`CHANGELOG.md`](../CHANGELOG.md) dosyasının en üstüne `## 1.0.1` başlığıyla yeni sürümün maddelerini ekle.
+3. Commit'le ve gönder, sonra sürüm etiketini gönder:
+   ```sh
+   git tag v1.0.1
+   git push origin v1.0.1
+   ```
+4. GitHub Actions birkaç dakikada her Minecraft sürümü için jar derler ve **Releases** altında `v1.0.1` sürümünü
+   açar, notları CHANGELOG'dan alır. Etiket `gradle.properties`'teki sürümle uyuşmazsa durur.
+5. Jar'ları Releases'tan indirip Modrinth'e yükle (her Minecraft sürümü ayrı version, bkz. 4. adım).
+
+## 6. Yeni Minecraft sürümü desteği
+
+Yeni bir Minecraft sürümü çıkınca (örneğin 26.4):
+
+1. `versions/26.3.properties` dosyasını `versions/26.4.properties` olarak kopyala. İçindeki sürümleri
+   [fabricmc.net/develop](https://fabricmc.net/develop) (Fabric API) ve Modrinth'teki Mod Menu sayfasından güncelle.
+2. `./gradlew build -Pmc=26.4` ile derle, sonra `./gradlew runClientGameTest -Pmc=26.4` ile oyun içi testi çalıştır.
+3. İkisi de geçerse yeni sürüm hazır: bir sonraki etikette 26.4 jar'ı da otomatik çıkar.
+   Derleme hatası olursa Minecraft o sürümde bir şeyi değiştirmiştir, kodun uyarlanması gerekir.
+
+Eski bir sürümü bırakmak için `versions/` altındaki dosyasını silmek yeterli.
 
 ---
 
-## 6. Paylaşım metinleri
+## 7. Paylaşım metinleri
 
 Discord, Reddit veya Hypixel forumu için:
 

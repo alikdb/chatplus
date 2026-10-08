@@ -6,6 +6,14 @@ plugins {
 	id "org.jetbrains.kotlin.jvm" version "2.4.20"
 }
 
+// Minecraft version specific dependency versions live in versions/<mc>.properties
+def targetProperties = new Properties()
+file("versions/${project.mc}.properties").withInputStream { targetProperties.load(it) }
+targetProperties.each { key, value -> project.ext.set(key, value) }
+
+// e.g. 1.0.0+26.2, one jar per Minecraft version
+version = "${project.version}+${project.minecraft_version}"
+
 repositories {
 	maven {
 		name = "TerraformersMC"
@@ -64,11 +72,11 @@ tasks.named("test") {
 }
 
 processResources {
-	def version = project.version
-	inputs.property "version", version
+	def expansions = [version: project.version, minecraft_dependency: project.minecraft_dependency]
+	inputs.properties expansions
 
 	filesMatching("fabric.mod.json") {
-		expand "version": version
+		expand expansions
 	}
 }
 

@@ -1,7 +1,4 @@
-# Automatically build the project and run any configured tests for every push
-# and submitted pull request. This can help catch issues that only occur on
-# certain platforms or Java versions, and provides a first line of defence
-# against bad commits.
+# Builds and tests the mod for every Minecraft version in versions/ on each push and pull request.
 
 name: build
 on: [pull_request, push]
@@ -21,8 +18,11 @@ jobs:
           distribution: 'microsoft'
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
-      - name: build
-        run: ./gradlew build
+      - name: build every minecraft version
+        run: |
+          for file in versions/*.properties; do
+            ./gradlew build -Pmc="$(basename "$file" .properties)"
+          done
       - name: capture build artifacts
         uses: actions/upload-artifact@v7
         with:

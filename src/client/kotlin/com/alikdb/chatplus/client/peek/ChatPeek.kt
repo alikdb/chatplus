@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper
 import net.minecraft.client.KeyMapping
 import net.minecraft.client.Minecraft
 import net.minecraft.network.chat.Component
-import org.lwjgl.glfw.GLFW
+import com.mojang.blaze3d.platform.InputConstants
 import kotlin.math.sign
 
 /**
@@ -19,7 +19,7 @@ object ChatPeek {
 	private var wasPeeking = false
 
 	fun register(category: KeyMapping.Category) {
-		key = KeyMappingHelper.registerKeyMapping(KeyMapping("key.chatplus-hypixel.peek", GLFW.GLFW_KEY_LEFT_ALT, category))
+		key = KeyMappingHelper.registerKeyMapping(KeyMapping("key.chatplus-hypixel.peek", InputConstants.KEY_LALT, category))
 	}
 
 	@JvmStatic
