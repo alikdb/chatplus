@@ -91,6 +91,9 @@ With **Sync With Server** on, the highlight follows these Hypixel messages:
 - "You are not in a party and were moved to the ALL channel." and other "moved back to ALL" messages.
 - "Opened a chat conversation with ..." (`/chat <player>`). None of the buttons is highlighted then.
 
+Hypixel keeps your channel when you switch servers (for example `/hub`) or log in again, so the mod remembers
+the last channel too, even after restarting the game.
+
 Hypixel translates these messages into your `/language`. English and Turkish channel names are recognized.
 
 The buttons are hidden while you type a command (the input starts with `/`), because Minecraft shows command

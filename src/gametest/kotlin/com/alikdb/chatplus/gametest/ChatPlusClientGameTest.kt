@@ -86,6 +86,11 @@ object ChatPlusClientGameTest : FabricClientGameTest {
 			context.setScreen { null }
 			context.runOnClient<RuntimeException> { ChatPlusConfig.get().chatHeads.position = HeadPosition.BEFORE_NAME }
 		}
+
+		// Hypixel keeps the channel when you switch servers or reconnect, so the buttons must too
+		check(context.computeOnClient<ChatChannel?, RuntimeException> { ChatChannels.current } == ChatChannel.PARTY) {
+			"channel was reset after leaving the world"
+		}
 	}
 
 	private fun pretendHypixel() {

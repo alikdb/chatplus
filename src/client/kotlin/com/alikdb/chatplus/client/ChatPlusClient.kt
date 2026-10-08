@@ -44,13 +44,11 @@ object ChatPlusClient : ClientModInitializer {
 
 		ClientPlayConnectionEvents.JOIN.register { connection, _, client ->
 			Hypixel.onJoin(connection, client)
-			ChatChannels.reset()
 			PlayerNameIndex.invalidate()
 		}
 
 		ClientPlayConnectionEvents.DISCONNECT.register { _, _ ->
 			Hypixel.onDisconnect()
-			ChatChannels.reset()
 			ChatHeads.resetServerKnowledge()
 		}
 

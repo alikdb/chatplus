@@ -106,6 +106,9 @@ Başka bir komut verilirse buton **komut butonu** olur: tıklayınca komutu çal
 - "You are not in a party and were moved to the ALL channel." ve ALL kanalına geri atıldığını söyleyen diğer mesajlar.
 - "Opened a chat conversation with ..." (`/chat <oyuncu>`). Bu durumda hiçbir buton vurgulanmaz.
 
+Hypixel sunucu değiştirdiğinde (örneğin `/hub`) veya tekrar girdiğinde kanalını korur. Mod da son kanalı
+hatırlar, oyunu kapatıp açsan bile.
+
 Hypixel bu mesajları `/language` ayarındaki dile çevirir. İngilizce ve Türkçe kanal isimleri tanınır.
 
 Komut yazarken (yazı `/` ile başlıyorsa) butonlar gizlenir, çünkü Minecraft komut önerilerini aynı yerde gösterir.

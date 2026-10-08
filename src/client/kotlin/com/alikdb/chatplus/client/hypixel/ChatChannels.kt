@@ -37,10 +37,20 @@ object ChatChannels {
 	private val SWITCHED = Regex("""(\p{Lu}[\p{Lu} -]*?) (?:channel|kanal)""")
 	private val CONVERSATION = Regex("""^Opened a chat conversation with """)
 
-	/** The channel Hypixel currently sends our messages to, as far as we know. */
+	/**
+	 * The channel Hypixel currently sends our messages to, as far as we know.
+	 * Saved in the config: Hypixel keeps the channel when you switch servers or log in again.
+	 */
 	@JvmStatic
-	var current: ChatChannel? = ChatChannel.ALL
-		private set
+	var current: ChatChannel?
+		get() = ChatPlusConfig.get().channelButtons.lastChannel
+		private set(channel) {
+			val settings = ChatPlusConfig.get().channelButtons
+			if (settings.lastChannel != channel) {
+				settings.lastChannel = channel
+				ChatPlusConfig.save()
+			}
+		}
 
 	fun channelFor(command: String): ChatChannel? =
 		CHAT_COMMAND.matchEntire(command.trim())?.let { ChatChannel.byAlias(it.groupValues[1]) }
@@ -73,9 +83,5 @@ object ChatChannels {
 		SWITCHED.find(text)?.let { match ->
 			ChatChannel.byServerName(match.groupValues[1])?.let { current = it }
 		}
-	}
-
-	fun reset() {
-		current = ChatChannel.ALL
 	}
 }

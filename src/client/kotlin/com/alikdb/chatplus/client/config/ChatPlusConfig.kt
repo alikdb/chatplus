@@ -1,5 +1,6 @@
 package com.alikdb.chatplus.client.config
 
+import com.alikdb.chatplus.client.hypixel.ChatChannel
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonParseException
 import net.fabricmc.loader.api.FabricLoader
@@ -29,6 +30,8 @@ class ChannelButtonsSettings {
 	/** 0 = fit to label */
 	var buttonWidth = 0
 	var buttons = defaultButtons()
+	/** Last channel Hypixel put us in; Hypixel keeps it across server switches and relogs, so we do too. Null = private conversation. */
+	var lastChannel: ChatChannel? = ChatChannel.ALL
 
 	companion object {
 		fun defaultButtons() = mutableListOf(
@@ -123,6 +126,8 @@ class ChatPlusConfig {
 		}
 
 		fun replace(config: ChatPlusConfig) {
+			// the channel may have changed while the settings screen was open
+			config.channelButtons.lastChannel = instance.channelButtons.lastChannel
 			instance = config.sanitized()
 			save()
 		}
