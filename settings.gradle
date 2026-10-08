@@ -10,4 +10,4 @@ pluginManagement {
 }
 
 // Should match your modid
-rootProject.name = 'hypixel-chatplus'
+rootProject.name = 'chatplus-hypixel'

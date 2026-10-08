@@ -257,7 +257,7 @@ class ChatPlusConfigScreen(private val parent: Screen?) : Screen(Component.trans
 	private fun text(key: String) = Component.translatable("$KEY.$key")
 
 	companion object {
-		private const val KEY = "hypixel-chatplus.settings"
+		private const val KEY = "chatplus-hypixel.settings"
 		private const val HEADER_HEIGHT = 56
 		private const val FOOTER_HEIGHT = 33
 

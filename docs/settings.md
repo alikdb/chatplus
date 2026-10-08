@@ -2,7 +2,7 @@
 
 [Türkçe](settings.tr.md)
 
-This page explains every option of Hypixel ChatPLUS, what it is for, and its default value.
+This page explains every option of ChatPlus - Hypixel, what it is for, and its default value.
 
 - [Opening the settings](#opening-the-settings)
 - [Channel Buttons tab](#channel-buttons-tab)
@@ -18,8 +18,8 @@ Any of these works:
 
 - The **⚙** button at the end of the channel buttons, while the chat is open on Hypixel.
 - The `/chatplus` command.
-- **Mod Menu** → Hypixel ChatPLUS → config button, if Mod Menu is installed.
-- The **Open Settings** key. It has no key by default; bind it in Controls → Key Binds → Hypixel ChatPLUS.
+- **Mod Menu** → ChatPlus - Hypixel → config button, if Mod Menu is installed.
+- The **Open Settings** key. It has no key by default; bind it in Controls → Key Binds → ChatPlus - Hypixel.
 
 The screen works on a copy of your settings. **Done** saves the changes, **Cancel** throws them away.
 
@@ -151,7 +151,7 @@ and the chat goes back to normal, scrolled to the newest message.
 
 ## Key bindings and commands
 
-Find them under **Controls → Key Binds → Hypixel ChatPLUS**:
+Find them under **Controls → Key Binds → ChatPlus - Hypixel**:
 
 | Key binding | Default |
 |---|---|
@@ -164,7 +164,7 @@ Find them under **Controls → Key Binds → Hypixel ChatPLUS**:
 
 ## Config file
 
-Settings are stored in `.minecraft/config/hypixel-chatplus.json`. You can edit or share this file. Delete it to
+Settings are stored in `.minecraft/config/chatplus-hypixel.json`. You can edit or share this file. Delete it to
 go back to the defaults. Out-of-range values are clamped when the file is loaded.
 
 ```json

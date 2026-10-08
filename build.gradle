@@ -17,7 +17,7 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"hypixel-chatplus" {
+		"chatplus-hypixel" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
@@ -28,7 +28,7 @@ loom {
 fabricApi {
 	configureTests {
 		createSourceSet = true
-		modId = "hypixel-chatplus-gametest"
+		modId = "chatplus-hypixel-gametest"
 		enableGameTests = false
 		enableClientGameTests = true
 	}

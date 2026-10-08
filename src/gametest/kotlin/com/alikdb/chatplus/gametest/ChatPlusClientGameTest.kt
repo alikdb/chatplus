@@ -21,7 +21,7 @@ import org.slf4j.LoggerFactory
  * Screenshots end up in build/run/clientGameTest/screenshots.
  */
 object ChatPlusClientGameTest : FabricClientGameTest {
-	private val LOGGER = LoggerFactory.getLogger("hypixel-chatplus-gametest")
+	private val LOGGER = LoggerFactory.getLogger("chatplus-hypixel-gametest")
 
 	private val LINES = listOf(
 		"§2Guild > §b[MVP§c+§b] blksx §e[Officer]§f: anyone up for F7?",
@@ -39,10 +39,10 @@ object ChatPlusClientGameTest : FabricClientGameTest {
 		context.setScreen { ChatPlusConfigScreen(null) }
 		context.waitTicks(2)
 		context.takeScreenshot("settings-channels").also { LOGGER.info("screenshot {}", it) }
-		context.clickScreenButton("hypixel-chatplus.settings.tab.heads")
+		context.clickScreenButton("chatplus-hypixel.settings.tab.heads")
 		context.waitTicks(2)
 		context.takeScreenshot("settings-heads")
-		context.clickScreenButton("hypixel-chatplus.settings.tab.chat")
+		context.clickScreenButton("chatplus-hypixel.settings.tab.chat")
 		context.waitTicks(2)
 		context.takeScreenshot("settings-chat")
 		context.setScreen { null }

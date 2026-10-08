@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "hypixel-chatplus-gametest",
+	"id": "chatplus-hypixel-gametest",
 	"version": "1.0.0",
-	"name": "Hypixel ChatPLUS Game Tests",
+	"name": "ChatPlus - Hypixel Game Tests",
 	"environment": "client",
 	"entrypoints": {
 		"fabric-client-gametest": [
@@ -13,6 +13,6 @@
 		]
 	},
 	"depends": {
-		"hypixel-chatplus": "*"
+		"chatplus-hypixel": "*"
 	}
 }

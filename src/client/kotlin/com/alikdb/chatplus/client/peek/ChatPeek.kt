@@ -19,7 +19,7 @@ object ChatPeek {
 	private var wasPeeking = false
 
 	fun register(category: KeyMapping.Category) {
-		key = KeyMappingHelper.registerKeyMapping(KeyMapping("key.hypixel-chatplus.peek", GLFW.GLFW_KEY_LEFT_ALT, category))
+		key = KeyMappingHelper.registerKeyMapping(KeyMapping("key.chatplus-hypixel.peek", GLFW.GLFW_KEY_LEFT_ALT, category))
 	}
 
 	@JvmStatic

@@ -1,6 +1,6 @@
 package com.alikdb.chatplus.client
 
-import com.alikdb.chatplus.HypixelChatPLUS
+import com.alikdb.chatplus.ChatPlus
 import com.alikdb.chatplus.client.config.ChatPlusConfig
 import com.alikdb.chatplus.client.config.ChatPlusConfigScreen
 import com.alikdb.chatplus.client.heads.ChatHeads
@@ -18,8 +18,8 @@ import net.fabricmc.fabric.api.client.message.v1.ClientReceiveMessageEvents
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents
 import net.minecraft.client.KeyMapping
 
-object HypixelChatPLUSClient : ClientModInitializer {
-	private val KEY_CATEGORY = KeyMapping.Category.register(HypixelChatPLUS.id("main"))
+object ChatPlusClient : ClientModInitializer {
+	private val KEY_CATEGORY = KeyMapping.Category.register(ChatPlus.id("main"))
 
 	private lateinit var settingsKey: KeyMapping
 	private var openSettings = false
@@ -29,7 +29,7 @@ object HypixelChatPLUSClient : ClientModInitializer {
 
 		ChatPeek.register(KEY_CATEGORY)
 		settingsKey = KeyMappingHelper.registerKeyMapping(
-			KeyMapping("key.hypixel-chatplus.settings", InputConstants.UNKNOWN.value, KEY_CATEGORY)
+			KeyMapping("key.chatplus-hypixel.settings", InputConstants.UNKNOWN.value, KEY_CATEGORY)
 		)
 
 		ClientTickEvents.END_CLIENT_TICK.register { client ->
@@ -66,7 +66,7 @@ object HypixelChatPLUSClient : ClientModInitializer {
 			})
 		}
 
-		HypixelChatPLUS.LOGGER.info("Hypixel ChatPLUS loaded")
+		ChatPlus.LOGGER.info("ChatPlus - Hypixel loaded")
 	}
 
 	fun openSettingsNextTick() {

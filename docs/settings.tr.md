@@ -2,7 +2,7 @@
 
 [English](settings.md)
 
-Bu sayfada Hypixel ChatPLUS'ın bütün ayarları, ne işe yaradıkları ve varsayılan değerleri anlatılıyor.
+Bu sayfada ChatPlus - Hypixel'in bütün ayarları, ne işe yaradıkları ve varsayılan değerleri anlatılıyor.
 
 - [Kurulum](#kurulum)
 - [Ayarları açmak](#ayarları-açmak)
@@ -22,7 +22,7 @@ Minecraft **26.2** için [Fabric Loader](https://fabricmc.net/use/) kur, sonra `
 | [Fabric API](https://modrinth.com/mod/fabric-api) | zorunlu |
 | [Fabric Language Kotlin](https://modrinth.com/mod/fabric-language-kotlin) | zorunlu |
 | [Mod Menu](https://modrinth.com/mod/modmenu) | isteğe bağlı, mod listesine ayar butonu ekler |
-| Hypixel ChatPLUS | bu mod |
+| ChatPlus - Hypixel | bu mod |
 
 Chat Heads modunu birlikte kullanma. İkisi de chat'e kafa ekler.
 
@@ -32,8 +32,8 @@ Chat Heads modunu birlikte kullanma. İkisi de chat'e kafa ekler.
 
 - Hypixel'de chat açıkken kanal butonlarının sonundaki **⚙** butonu.
 - `/chatplus` komutu.
-- Mod Menu kuruluysa **Mod Menu** → Hypixel ChatPLUS → ayar butonu.
-- **Ayarları Aç** tuşu. Varsayılan tuşu yok, Kontroller → Tuş Atamaları → Hypixel ChatPLUS altından atanır.
+- Mod Menu kuruluysa **Mod Menu** → ChatPlus - Hypixel → ayar butonu.
+- **Ayarları Aç** tuşu. Varsayılan tuşu yok, Kontroller → Tuş Atamaları → ChatPlus - Hypixel altından atanır.
 
 Ekran ayarların bir kopyası üzerinde çalışır. **Bitti** değişiklikleri kaydeder, **İptal** hepsini geri alır.
 
@@ -164,7 +164,7 @@ döner ve en yeni mesaja kayar.
 
 ## Tuşlar ve komutlar
 
-**Kontroller → Tuş Atamaları → Hypixel ChatPLUS** altında:
+**Kontroller → Tuş Atamaları → ChatPlus - Hypixel** altında:
 
 | Tuş | Varsayılan |
 |---|---|
@@ -177,7 +177,7 @@ döner ve en yeni mesaja kayar.
 
 ## Ayar dosyası
 
-Ayarlar `.minecraft/config/hypixel-chatplus.json` dosyasında durur. Elle düzenleyebilir veya arkadaşına
+Ayarlar `.minecraft/config/chatplus-hypixel.json` dosyasında durur. Elle düzenleyebilir veya arkadaşına
 gönderebilirsin. Dosyayı silersen ayarlar varsayılana döner. Sınır dışındaki değerler yüklenirken düzeltilir.
 Dosyanın tam hali için [İngilizce rehberdeki örneğe](settings.md#config-file) bak.
 
@@ -203,3 +203,6 @@ Hayır. İkisi de kafa ekler, Chat Heads'i kaldır. Bu mod onun özelliklerini i
 **Başka sunucularda çalışır mı?**
 Chat kafaları, chat geçmişi ve göz atma her yerde çalışır. Kanal butonları Hypixel'in `/chat` komutu için yapıldı,
 ama **Sadece Hypixel'de**'yi kapatıp her sunucuda komut butonu olarak kullanabilirsin.
+
+**Mod benim dilimde yok.**
+Çeviriler pull request ile eklenir, programlama bilmen gerekmez. Adımlar [çeviri rehberinde](translations.md) (İngilizce).

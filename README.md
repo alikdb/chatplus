@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="docs/images/icon.png" width="128" alt="Hypixel ChatPLUS icon">
+  <img src="docs/images/icon.png" width="128" alt="ChatPlus - Hypixel icon">
 </p>
 
-<h1 align="center">Hypixel ChatPLUS</h1>
+<h1 align="center">ChatPlus - Hypixel</h1>
 
 <p align="center">
   A chat mod for Hypixel and SkyBlock: one-click chat channels, player heads in every chat,<br>
@@ -41,14 +41,14 @@ but it also works where Chat Heads can't:
 | Lobbies and games | `[123✫] [MVP+] Name: gg`, `>>> [MVP++] Name joined the lobby! <<<` |
 
 Guild members, party members and people messaging you are usually not in your lobby, so they are not in the
-tab list. Chat Heads relies on the tab list, which is why it shows no head for them. ChatPLUS reads the sender
+tab list. Chat Heads relies on the tab list, which is why it shows no head for them. ChatPlus reads the sender
 from the message and looks their skin up by name. Lookups go through Minecraft's own profile cache and run
 in the background, so chat never waits for them.
 
 NPC and boss dialogue (`[NPC] Jacob: ...`) gets no head.
 
 ### Longer chat history
-Vanilla forgets everything older than 100 messages. ChatPLUS keeps **1000** by default, and you can set anything
+Vanilla forgets everything older than 100 messages. ChatPlus keeps **1000** by default, and you can set anything
 from 100 to 10000. The up-arrow history of your own messages is longer too. Optionally, the chat survives disconnecting.
 
 ### Chat peek
@@ -75,7 +75,7 @@ All settings are explained in **[docs/settings.md](docs/settings.md)**.
 | [Fabric API](https://modrinth.com/mod/fabric-api) | required |
 | [Fabric Language Kotlin](https://modrinth.com/mod/fabric-language-kotlin) | required |
 | [Mod Menu](https://modrinth.com/mod/modmenu) | optional, adds a config button to the mod list |
-| Hypixel ChatPLUS | this mod |
+| ChatPlus - Hypixel | this mod |
 
 Don't use it together with Chat Heads, since both would add heads to the chat.
 
@@ -83,9 +83,14 @@ Don't use it together with Chat Heads, since both would add heads to the chat.
 
 | | |
 |---|---|
-| Peek chat | hold **Left Alt** (Controls → Hypixel ChatPLUS) |
+| Peek chat | hold **Left Alt** (Controls → ChatPlus - Hypixel) |
 | Open settings | ⚙ button in chat, `/chatplus`, Mod Menu, or bind "Open Settings" |
-| Config file | `.minecraft/config/hypixel-chatplus.json` |
+| Config file | `.minecraft/config/chatplus-hypixel.json` |
+
+## Languages
+
+English and Türkçe are included. Want the mod in your language? Translations are added with a pull request,
+no programming needed; see **[docs/translations.md](docs/translations.md)**.
 
 ## Building
 

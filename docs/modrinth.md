@@ -19,7 +19,7 @@ Shows the sender's head next to chat messages, like Chat Heads, but also for pla
 - Party Finder
 - Lobby and game chat with ranks and Bed Wars stars
 
-Chat Heads only knows the players in the tab list, so guild, party and DM senders get no head. ChatPLUS reads the sender from the message and looks their skin up by name, in the background and cached. NPC and boss dialogue gets no head.
+Chat Heads only knows the players in the tab list, so guild, party and DM senders get no head. ChatPlus reads the sender from the message and looks their skin up by name, in the background and cached. NPC and boss dialogue gets no head.
 
 Choose between *before name* and *before line* placement. Shadow, gap, 3D hat and heads in tab completion are all configurable.
 
@@ -33,6 +33,9 @@ Hold **Left Alt** to see the whole chat without opening the input box, so you ca
 Open them from the ⚙ button in chat, with `/chatplus`, or from Mod Menu. Every option is explained in the [settings guide](https://github.com/alikdb/chatplus/blob/main/docs/settings.md) ([Türkçe](https://github.com/alikdb/chatplus/blob/main/docs/settings.tr.md)).
 
 ![Settings](https://raw.githubusercontent.com/alikdb/chatplus/main/docs/images/settings-channels.png)
+
+## Languages
+English and Türkçe. Translations are welcome as pull requests, see the [translation guide](https://github.com/alikdb/chatplus/blob/main/docs/translations.md).
 
 ## Requirements
 - [Fabric API](https://modrinth.com/mod/fabric-api)

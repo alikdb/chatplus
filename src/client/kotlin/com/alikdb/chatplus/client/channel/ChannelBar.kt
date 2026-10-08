@@ -1,6 +1,6 @@
 package com.alikdb.chatplus.client.channel
 
-import com.alikdb.chatplus.client.HypixelChatPLUSClient
+import com.alikdb.chatplus.client.ChatPlusClient
 import com.alikdb.chatplus.client.config.ButtonAlignment
 import com.alikdb.chatplus.client.config.ChannelButton
 import com.alikdb.chatplus.client.config.ChatPlusConfig
@@ -47,8 +47,8 @@ class ChannelBar(private val font: Font, screenWidth: Int, screenHeight: Int) {
 		}
 
 		if (settings.showSettingsButton) {
-			slots += Slot(x, settingsWidth, Component.literal("⚙"), Component.translatable("hypixel-chatplus.settings.title"), null, {
-				HypixelChatPLUSClient.openSettingsNextTick()
+			slots += Slot(x, settingsWidth, Component.literal("⚙"), Component.translatable("chatplus-hypixel.settings.title"), null, {
+				ChatPlusClient.openSettingsNextTick()
 			})
 		}
 	}

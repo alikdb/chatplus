@@ -79,9 +79,9 @@ class ChatPlusConfig {
 		const val MIN_HISTORY = 100
 		const val MAX_HISTORY = 10000
 
-		private val LOGGER = LoggerFactory.getLogger("hypixel-chatplus/config")
+		private val LOGGER = LoggerFactory.getLogger("chatplus-hypixel/config")
 		private val GSON = GsonBuilder().setPrettyPrinting().create()
-		private val PATH = FabricLoader.getInstance().configDir.resolve("hypixel-chatplus.json")
+		private val PATH = FabricLoader.getInstance().configDir.resolve("chatplus-hypixel.json")
 
 		@JvmStatic
 		var instance = ChatPlusConfig()

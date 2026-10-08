@@ -1,8 +1,8 @@
 {
 	"schemaVersion": 1,
-	"id": "hypixel-chatplus",
+	"id": "chatplus-hypixel",
 	"version": "${version}",
-	"name": "Hypixel ChatPLUS",
+	"name": "ChatPlus - Hypixel",
 	"description": "Chat improvements for Hypixel and SkyBlock: one-click channel buttons, player heads in every chat (guild, party, co-op, DMs), a bigger chat history and a League-style chat peek key.",
 	"authors": [
 		"alikdb"
@@ -16,12 +16,12 @@
 		"issues": "https://github.com/alikdb/chatplus/issues"
 	},
 	"license": "MPL-2.0",
-	"icon": "assets/hypixel-chatplus/icon.png",
+	"icon": "assets/chatplus-hypixel/icon.png",
 	"environment": "client",
 	"entrypoints": {
 		"client": [
 			{
-				"value": "com.alikdb.chatplus.client.HypixelChatPLUSClient",
+				"value": "com.alikdb.chatplus.client.ChatPlusClient",
 				"adapter": "kotlin"
 			}
 		],
@@ -34,7 +34,7 @@
 	},
 	"mixins": [
 		{
-			"config": "hypixel-chatplus.client.mixins.json",
+			"config": "chatplus-hypixel.client.mixins.json",
 			"environment": "client"
 		}
 	],
